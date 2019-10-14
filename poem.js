@@ -43,6 +43,16 @@ function getPhrase() {
   return 'are you';
 }
 
+const poemLoc = document.getElementById('poem');
+
+poemLoc.innerHTML = (<ul>
+<li>`-- ${plural_noun1} --`</li>
+<li>`${plural_noun1} are ${adjective1}`</li>
+<li>`${plural_noun2} are ${adjective_rhyme}`</li>
+<li>`${noun} is ${adjective3}`</li>
+<li>`${cojunction} so ${getPhrase()}`</li>
+</ul>);
+
 console.log(`-- ${plural_noun1} --`);
 console.log(`${plural_noun1} are ${adjective1}`);
 console.log(`${plural_noun2} are ${adjective_rhyme}`);
