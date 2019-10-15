@@ -1,0 +1,58 @@
+body {
+  background: rgb(13, 21, 36);
+  font-family: cursive;
+  color: whitesmoke;
+}
+
+.poem-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.poem {
+  align-self: center;
+  border-radius: 20px;
+  padding: 40px 50px;
+  font-size: 36px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+
+      &:first-child {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+.font2 {
+  font-family: 'Fredericka the Great', cursive;
+}
+.font3 {
+  font-family: 'Lobster Two', cursive;
+}
+.font4 {
+  font-family: 'Turret Road', cursive;
+}
+.font1 {
+  font-family: 'Righteous', cursive;
+}
+
+.style1 {
+  color: pink;
+  border: 3px dotted dodgerblue;
+}
+
+.style1 {
+  color: pink;
+  border: 3px dotted dodgerblue;
+}
+
+// border: gold yellow mediumpurple mediumorchid slateblue limegreen DARKTURQUOISE steelblue chocolate lightslategray
+// text: lemmonchiffon pachpuff lavender MEDIUMAQUAMARINE PALETURQUOISE POWDERBLUE deepskyblue honeydew aliceblue gainsboro
