@@ -1,11 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
+import { words } from './Words.js';
+import { styles } from './Styles.js';
+import { getRando } from './Utils.js';
 
 function CodePoetry() {
-  // STATE
   const intialState = {
     poem: '',
     style: {},
-    tweet: 'https://jessmear.github.io/code-poetry/'
+    tweet: 'https://jessmear.github.io/code-poetry/',
+    showInfo: 'modal-hide'
   };
   const [poem, updatePoem] = useState(intialState);
 
@@ -13,75 +16,34 @@ function CodePoetry() {
     build();
   }, []);
 
-  // GRAMMAR FRAMEWORK
-  /*
-  plural_noun1 are adjective1
-  plural_noun2 are adjective_rhyme
-  noun is adjective3
-  cojunction so ' are you / is she / is he / are we / am I / is it / are they '
-  */
-
-  // WORD LISTS
-  //https://api.datamuse.com/words?rel_jjb=ocean&topics=temperature&md=p
-  const plural_nouns = ['roses', 'violets', 'airplanes', 'kittens', 'fishes', 'candies', 'programs', 'slingshots', 'lightbulbs', 'rivers', 'mermaids', 'rainbows', 'daisies', 'lap pools', 'cell phones', 'board games'];
-  const nouns = ['sugar', 'the car', 'airplane', 'the cat', 'the fish', 'candy', 'the code', 'a sword', 'bright light', 'the squid', 'a whale', 'the cloud', 'flour', 'the pool', 'the phone', 'the game'];
-  const conjunctions = ['and', 'but', 'yet'];
-  const adjectives = ['big', 'real', 'small', 'tall', 'long', 'drunk', 'ill', 'right', 'cross', 'mad', 'lax', 'mean', 'coy', 'prime', 'bored', 'fair', 'blonde', 'apt', 'low', 'high', 'wise', 'wry', 'huge', 'quick', 'clean', 'drab', 'plain', 'red', 'blue', 'green', 'black', 'dead', 'odd', 'rich', 'shy', 'sly', 'vast', 'brave', 'calm', 'kind', 'rough', 'rogue', 'wide', 'faint', 'loud', 'late', 'swift', 'light', 'weak', 'wet', 'full', 'cool', 'dark', 'dry', 'apt', 'few', 'sweet'];
-  const adjectivesThatRhyme = {
-    'oo': ['blue', 'new', 'few', 'two', 'true'],
-    'ee': ['free', 'three', 'key', 'wee'],
-    'ii': ['fly', 'high'],
-    'it': ['fit', 'lit'],
-    'ay': ['grey', 'okay', 'gay']
-}
-
-  // STYLE LISTS
-  const fontFamilies = ["'Fredericka the Great', cursive", "'Lobster Two', cursive", "'Nova Flat', cursive", "'Righteous', cursive"];
-  const textColors = ['lemonchiffon', 'peachpuff', 'lavender', 'mediumaquamarine', 'paleturquoise', 'powderblue', 'deepskyblue', 'honeydew', 'aliceblue', 'gainsboro'];
-  const borderColors = ['gold', 'yellow', 'mediumpurple', 'mediumorchid', 'slateblue', 'limegreen', 'darkturquoise', 'steelblue', 'chocolate', 'lightslategray']; 
+  
 
   // BUILDING THE POEM
   const build = () => {
-    const plural_noun1 = plural_nouns[getRando(plural_nouns.length)];
-    const adjective1 = adjectives[getRando(adjectives.length)];
-    const plural_noun2 = plural_nouns[getRando(plural_nouns.length)];
-    const noun = nouns[getRando(nouns.length)];
-    const adjective3 = adjectives[getRando(adjectives.length)];
-    const cojunction = conjunctions[getRando(conjunctions.length)];
+    const plural_noun1 = words.plural_nouns[getRando(words.plural_nouns.length)];
+    const adjective1 = words.adjectives[getRando(words.adjectives.length)];
+    const plural_noun2 = words.plural_nouns[getRando(words.plural_nouns.length)];
+    const noun = words.nouns[getRando(words.nouns.length)];
+    const adjective3 = words.adjectives[getRando(words.adjectives.length)];
+    const cojunction = words.conjunctions[getRando(words.conjunctions.length)];
 
-    const font = 'font' + (getRando(1,4));
-    const borderDetails = `${borderColors[getRando(borderColors.length)]} 3px dashed`;
+    const borderDetails = `${styles.borderColors[getRando(styles.borderColors.length)]} 3px dashed`;
     const style = { 
-      'color': textColors[getRando(textColors.length)],
+      'color': styles.textColors[getRando(styles.textColors.length)],
       'border': borderDetails,
-      'fontFamily': fontFamilies[getRando(fontFamilies.length)]
+      'fontFamily': styles.fontFamilies[getRando(styles.fontFamilies.length)]
     };
-
-    function getRando(limit, start = 0) {
-      const num = Math.floor(Math.random()*(limit-start))+start;
-      return num;
-    }
 
     const ryhmeChoices = ['oo', 'ee', 'ii', 'it', 'ay'];
 
     const rhymeSound = ryhmeChoices[getRando(ryhmeChoices.length)];
 
-    const adjective_rhyme = adjectivesThatRhyme[rhymeSound][getRando(adjectivesThatRhyme[rhymeSound].length)];
-
-    const end_phrases = {
-      oo: ['are you'], 
-      ee: ['is she', 'is he', 'are we'], 
-      ii: ['am I'], 
-      it: ['is it'], 
-      ay: ['are they']
-    };
+    const adjective_rhyme = words.rhyming_adjectives[rhymeSound][getRando(words.rhyming_adjectives[rhymeSound].length)];
 
     function getPhrase() {
-      console.log(end_phrases[rhymeSound])
-      const num = getRando(end_phrases[rhymeSound].length);
-      const phraseChoice = end_phrases[rhymeSound][num];
+      const num = getRando(words.end_phrases[rhymeSound].length);
+      const phraseChoice = words.end_phrases[rhymeSound][num];
       return phraseChoice;
-      // return 'end phrase';
     }
 
     const line1 = `${plural_noun1} are ${adjective1}`;
@@ -100,14 +62,26 @@ function CodePoetry() {
     updatePoem({
       poem,
       style,
-      tweet: `${line1} / ${line2} / ${line3} / ${line4} [https://jessmear.github.io/code-poetry/]`
+      tweet: `${line1} / ${line2} / ${line3} / ${line4} [https://jessmear.github.io/code-poetry/]`,
+      showInfo: 'modal-hide'
     })
   }
 
-  
+  const toggleModal = () => {
+    const showInfo = (poem.showInfo == 'modal-show') ? 'modal-hide' : 'modal-show';
+    updatePoem({
+      ...poem,
+      showInfo
+    })
+  }
+
+  const getDate = () => {
+    return new Date().getYear()-100+2000;
+  }
 
   return (
     <div className="poem-container">
+
       <div className="poem" style={poem.style}>{poem.poem}</div>
       <div className="nav">
         <a href={`http://twitter.com/intent/tweet?text=${poem.tweet}`}
@@ -115,9 +89,19 @@ function CodePoetry() {
               id="tweet-quote">
                 tweet
           </a>
-        {/* <button>save</button> */}
         <button onClick={build}>poem again</button>
+        <button id="myBtn" onClick={toggleModal}>?</button>
       </div>
+
+      <div className={`modal ${poem.showInfo}`}>
+        <div className="modal-content">
+          <span onClick={toggleModal} className="close">&times;</span>
+          <p>Created by <a href="http://www.jessmear.com" target="_blank">Jess Mear</a>, copyright 2019 - {getDate()}.</p>
+          <p>GitHub repo: <a href="https://github.com/jessmear/code-poetry" target="_blank">code-poetry</a></p>
+          <p>This project is using <a href="https://www.datamuse.com/api/" target="_blank">Datamuse API</a> and <a href="https://github.com/ansteh/datamuse" target="_blank">Datamuse NPM module</a>.</p>
+        </div>
+      </div>
+
     </div>
   );
 }

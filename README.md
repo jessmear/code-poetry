@@ -17,8 +17,8 @@ Goals:
     Line 3: 5-7 syllables B
     Line 4: 5-7 syllables B
     Line 5: 7-10 syllables 
-    
-  - 
+  - figure out how to get a different page of results from api
+    - seed
 
 
 Source: https://www.familyfriendpoems.com/poems/other/limerick/)
