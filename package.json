@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://jessmear.github.io/code-poetry",
   "dependencies": {
+    "@babel/runtime": "^7.6.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0"
@@ -13,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build", 
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {

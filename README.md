@@ -1,12 +1,27 @@
 This is the bare-bones skeleton of a generative poetry app.
 
 Goals:
-- click button to generate another
-- design page 
-- complete randomization of all poem elements
+- improve page design
 - hit APIs to obtain better word lists
 - allow user to input a word to generate the poem
+- get rid of turret font, pick something 
+- add save feature (text or image?)
 - create more poem frameworks
+  - acrostic
+  - haiku
+  - 'roses are red' (done)
+
+  - limerick (A limerick is a short and fun five-line poem with a distinctive rhythm. The first, second and fifth lines are longer than the third and fourth lines. The rhyming pattern is AABBA. The longer A lines rhyme with each other and the shorter B lines rhyme with each other.
+    Line 1: 7-10 syllables A
+    Line 2: 7-10 syllables A
+    Line 3: 5-7 syllables B
+    Line 4: 5-7 syllables B
+    Line 5: 7-10 syllables 
+    
+  - 
+
+
+Source: https://www.familyfriendpoems.com/poems/other/limerick/)
 
 
 
