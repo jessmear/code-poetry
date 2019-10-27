@@ -2,20 +2,23 @@ body {
   background: #0d1524;
   font-family: cursive;
   color: whitesmoke;
+  font-family: "Fredericka the Great", cursive;
 }
 
 .poem-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 15vh;
 }
 
 .poem {
   align-self: center;
   border-radius: 20px;
-  padding: 40px 50px;
+  padding: 25px 45px;
   font-size: 36px;
+  height: 250px;
 }
 .poem ul {
   margin: 0;
@@ -28,30 +31,25 @@ body {
   padding-bottom: 10px;
 }
 
-.font2 {
+.nav {
+  margin-top: 30px;
+}
+.nav a, .nav button {
   font-family: "Fredericka the Great", cursive;
+  color: gold;
+  font-size: 18px;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border: dotted 1px white;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
 }
-
-.font3 {
-  font-family: "Lobster Two", cursive;
-}
-
-.font4 {
-  font-family: "Turret Road", cursive;
-}
-
-.font1 {
-  font-family: "Righteous", cursive;
-}
-
-.style1 {
-  color: pink;
-  border: 3px dotted dodgerblue;
-}
-
-.style1 {
-  color: pink;
-  border: 3px dotted dodgerblue;
+.nav a:hover, .nav button:hover {
+  color: lemonchiffon;
+  background: rgba(5, 5, 5, 0.2);
 }
 
 /*# sourceMappingURL=styles.css.map */
