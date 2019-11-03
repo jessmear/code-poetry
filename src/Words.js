@@ -11,12 +11,51 @@ const datamuse = require('datamuse');
 
 // CREATE SEED
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-const seed = datamuse.request(`words?md=p&sp=${alphabet[getRando(alphabet.length)]}*`)
+const seed = datamuse.request(`words?md=ps&sp=${alphabet[getRando(alphabet.length)]}*`)
   .then((json) => {
-    const wordChoice = json[getRando(json.length)];
-    console.log(wordChoice.word)
-    console.log(wordChoice.tags)
-    return wordChoice;
+    const nouns = json.filter( word => {
+      return word.tags[0] == 'n' && word.numSyllables == 2;
+    })
+    const myWord = nouns[getRando(json.length)];
+    console.log(myWord)
+    console.log(myWord.split(''))
+    let pluralized = myWord.split('');
+    switch(pluralized[(pluralized.length-1)]) {
+      case 'x':
+      case 's':
+      case 'sh':
+      case 'ch':
+        pluralized = myWord + 'es'
+        break;
+      case 'y':
+        if(
+            pluralized[(pluralized.length-2)] == 'a' ||
+            pluralized[(pluralized.length-2)] == 'e' ||
+            pluralized[(pluralized.length-2)] == 'i' ||
+            pluralized[(pluralized.length-2)] == 'o' ||
+            pluralized[(pluralized.length-2)] == 'u'
+          ) {
+            pluralized = myWord + 's'
+          } else {
+            pluralized = pluralized.pop().join('') + 'ies';
+          }
+        break;
+      default: 
+       pluralized = myWord + 's'
+    }
+    console.log(myWord, pluralized)
+
+    // everything else +s
+    // s, sh, ch, x +es
+    // (vowel)y +s
+    // (consant)y -y+ies
+    
+
+    // const wordChoice = json[getRando(json.length)];
+    // console.log(wordChoice.word)
+    // console.log(wordChoice.tags)
+    // console.log(wordChoice.numSyllables)
+    // return wordChoice;
   });
 
 // console.log(seed)
