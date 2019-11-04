@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/code-poetry/static/css/main.01c6dd39.chunk.css",
+    "main.css": "/code-poetry/static/css/main.5df3b136.chunk.css",
     "main.js": "/code-poetry/static/js/main.28906835.chunk.js",
     "main.js.map": "/code-poetry/static/js/main.28906835.chunk.js.map",
     "runtime-main.js": "/code-poetry/static/js/runtime-main.5c859ef8.js",
@@ -8,14 +8,14 @@
     "static/js/2.072886a6.chunk.js": "/code-poetry/static/js/2.072886a6.chunk.js",
     "static/js/2.072886a6.chunk.js.map": "/code-poetry/static/js/2.072886a6.chunk.js.map",
     "index.html": "/code-poetry/index.html",
-    "precache-manifest.7562988255ab4b17961d3c7043254215.js": "/code-poetry/precache-manifest.7562988255ab4b17961d3c7043254215.js",
+    "precache-manifest.82628e67d860c3be4035a256fba2ddaa.js": "/code-poetry/precache-manifest.82628e67d860c3be4035a256fba2ddaa.js",
     "service-worker.js": "/code-poetry/service-worker.js",
-    "static/css/main.01c6dd39.chunk.css.map": "/code-poetry/static/css/main.01c6dd39.chunk.css.map"
+    "static/css/main.5df3b136.chunk.css.map": "/code-poetry/static/css/main.5df3b136.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.5c859ef8.js",
     "static/js/2.072886a6.chunk.js",
-    "static/css/main.01c6dd39.chunk.css",
+    "static/css/main.5df3b136.chunk.css",
     "static/js/main.28906835.chunk.js"
   ]
 }
