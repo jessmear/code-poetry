@@ -2,7 +2,7 @@ body {
   background: rgb(13, 21, 36);
   font-family: cursive;
   color: whitesmoke;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Righteous', cursive;
 }
 
 .poem-container {
@@ -18,7 +18,7 @@ body {
   border-radius: 20px;
   padding: 25px 45px;
   font-size: 36px;
-  height: 250px;
+  height: 250px; 
 
   ul {
     margin: 0;
@@ -38,7 +38,7 @@ body {
   margin-top: 30px;
 
   a, button {
-    font-family: "Fredericka the Great", cursive;
+    font-family: "Righteous", cursive;
     color: gold;
     font-size: 18px;
     text-decoration: none;
@@ -54,5 +54,26 @@ body {
   a:hover, button:hover {
     color: lemonchiffon;
     background: rgba(5,5,5,.2);
+  }
+}
+
+@media (max-width: 600px) {
+  .poem {
+    font-size: 24px;
+    height: 175px;
+  }
+  .nav {
+    a, button {
+      margin: 3px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .poem {
+    font-size: 20px;
+    height: 160px;
   }
 }

@@ -34,7 +34,7 @@ function CodePoetry() {
       'fontFamily': styles.fontFamilies[getRando(styles.fontFamilies.length)]
     };
 
-    const ryhmeChoices = ['oo', 'ee', 'ii', 'it', 'ay'];
+    const ryhmeChoices = ['oo', 'ee', 'ii', 'ay'];
 
     const rhymeSound = ryhmeChoices[getRando(ryhmeChoices.length)];
 

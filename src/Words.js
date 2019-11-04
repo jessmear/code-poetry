@@ -11,54 +11,52 @@ const datamuse = require('datamuse');
 
 // CREATE SEED
 const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-const seed = datamuse.request(`words?md=ps&sp=${alphabet[getRando(alphabet.length)]}*`)
+export const plural_nouns = datamuse.request(`words?md=ps&sp=${alphabet[getRando(alphabet.length)]}*`)
   .then((json) => {
-    const nouns = json.filter( word => {
-      return word.tags[0] == 'n' && word.numSyllables == 2;
+    // nouns only
+    let nouns = json.filter( word => {
+       return word && word.tags && word.tags[0] === 'n';
     })
-    const myWord = nouns[getRando(json.length)];
-    console.log(myWord)
-    console.log(myWord.split(''))
-    let pluralized = myWord.split('');
-    switch(pluralized[(pluralized.length-1)]) {
-      case 'x':
-      case 's':
-      case 'sh':
-      case 'ch':
-        pluralized = myWord + 'es'
-        break;
-      case 'y':
-        if(
-            pluralized[(pluralized.length-2)] == 'a' ||
-            pluralized[(pluralized.length-2)] == 'e' ||
-            pluralized[(pluralized.length-2)] == 'i' ||
-            pluralized[(pluralized.length-2)] == 'o' ||
-            pluralized[(pluralized.length-2)] == 'u'
-          ) {
-            pluralized = myWord + 's'
-          } else {
-            pluralized = pluralized.pop().join('') + 'ies';
-          }
-        break;
-      default: 
-       pluralized = myWord + 's'
-    }
-    console.log(myWord, pluralized)
-
-    // everything else +s
-    // s, sh, ch, x +es
-    // (vowel)y +s
-    // (consant)y -y+ies
-    
-
-    // const wordChoice = json[getRando(json.length)];
-    // console.log(wordChoice.word)
-    // console.log(wordChoice.tags)
-    // console.log(wordChoice.numSyllables)
-    // return wordChoice;
+    nouns = nouns.filter( word => {
+      return word && word.numSyllables && word.numSyllables == 2;
+    })
+    nouns = nouns.filter( item =>{
+      let word = item.word;
+      switch(word[word.length-1]) {
+        case 'x':
+        case 'z':
+        case 's':
+        case 'sh':
+        case 'ch':
+        case 'e':
+        case 'on':
+          return false;
+      }
+      return true;
+    })
+    nouns = nouns.map( item => {
+      let word = item.word.split('');
+      if(word[word.length-1] == 'y') {
+        switch(word[(word.length-2)]) {
+          case 'a':
+          case 'e':
+          case 'i':
+          case 'o':
+          case 'u':
+            word = word.join('') + 's';
+            break;
+          default:
+            word.pop();
+            word = word.join('') + 'ies';
+        } 
+      } else {
+        word = word.join('') + 's';
+      }
+      return word;
+    });
+    // console.log(nouns)
   });
 
-// console.log(seed)
 // const seedDetails = datamuse.request(`words?sp=${alphabet[getRando(alphabet.length)]}*`)
 // .then((json) => {
 //   const wordChoice = json[getRando(json.length)]['word'];
