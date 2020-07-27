@@ -1,25 +1,20 @@
-import { getRando } from './Utils.js';
+import { getRandomNumber, getRandomLetter } from './Utils.js';
 
 
 // API
 const datamuse = require('datamuse');
-// datamuse.request('words?ml=ringing in the ears')
-//   .then((json) => {
-//     console.log(json);
-//     //do it!
-//   });
 
-// CREATE SEED
-const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-const seed = datamuse.request(`words?md=p&sp=${alphabet[getRando(alphabet.length)]}*`)
-  .then((json) => {
-    const wordChoice = json[getRando(json.length)];
-    console.log(wordChoice.word)
-    console.log(wordChoice.tags)
-    return wordChoice;
-  });
+const setWord = () => {
+  datamuse.request(`words?max=1&md=ps&sp=${getRandomLetter()}*`)
+    .then((json) => {
+      const wordChoice = json[getRandomNumber(json.length)];
+      console.log(wordChoice.word)
+      console.log(wordChoice.tags)
+      return wordChoice;
+    });
+}
 
-// console.log(seed)
+console.log(seed)
 // const seedDetails = datamuse.request(`words?sp=${alphabet[getRando(alphabet.length)]}*`)
 // .then((json) => {
 //   const wordChoice = json[getRando(json.length)]['word'];
