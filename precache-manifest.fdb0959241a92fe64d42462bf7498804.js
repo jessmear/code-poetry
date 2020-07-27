@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f612a5a2723223f47254fed7332a9360",
+    "revision": "3f4283247df78d88d4f33fb2d81410f6",
     "url": "/code-poetry/index.html"
   },
   {
-    "revision": "88b39918eaf1178afc0d",
+    "revision": "a9e6b1baa5de8cf6b94c",
     "url": "/code-poetry/static/css/main.62e5c31d.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/code-poetry/static/js/2.c49c1dcb.chunk.js"
   },
   {
-    "revision": "88b39918eaf1178afc0d",
-    "url": "/code-poetry/static/js/main.62a70a8a.chunk.js"
+    "revision": "a9e6b1baa5de8cf6b94c",
+    "url": "/code-poetry/static/js/main.aba9271d.chunk.js"
   },
   {
     "revision": "c43717d8d96b8634371f",
