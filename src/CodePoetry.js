@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { styles } from './Styles.js';
-import { getRandomNumber, getDate, getRandomLetter } from './Utils.js';
+import { getRandomNumber, getDate, getRandomLetter, shuffleArray, nounVerbAdj } from './Utils.js';
 
 const datamuse = require('datamuse');
 
@@ -19,6 +19,8 @@ function CodePoetry() {
   const [noun3, setNoun3] = useState('breezes');
   const [verb1, setVerb1] = useState('bends');
   const [verb2, setVerb2] = useState('sways');
+  const [conjunction, setConjunction] = useState('and');
+  const [phrase, setPhrase] = useState('now it is');
 
   useEffect(() => {
     build();
@@ -31,8 +33,9 @@ function CodePoetry() {
   }
 
   const setWord = (setThisState, syllableCount = 1, partOfSpeech = "n") => {
-    datamuse.request(`words?md=ps&sp=${getRandomLetter()}*`)
+    datamuse.request(`words?max=200&md=ps&sp=${getRandomLetter()}*`)
       .then((data) => {
+        shuffleArray(data)
         let wordChoice = data.find(word => {
           if(word.numSyllables == syllableCount) {
             if(word.tags && word.tags[0] == partOfSpeech) {
@@ -40,7 +43,7 @@ function CodePoetry() {
             }
           }
         })
-        wordChoice = wordChoice ? wordChoice.word : 'fly'
+        wordChoice = wordChoice ? wordChoice.word : nounVerbAdj[getRandomNumber(nounVerbAdj.length)]
         setThisState(wordChoice)
         console.log(wordChoice)
       });
@@ -50,6 +53,8 @@ function CodePoetry() {
 
   // BUILDING THE POEM
   const build = () => {
+    const conjunctions = ["for","and","nor","but","or","yet","so"]
+    const phrases = ["now it is", "then it was", "soon it be", "next it is", "then it is", "now we are", "then they were", "soon we were", "next they were", "then they are"]
 
     setWord(setAdjective1, 1, "adj")
     setWord(setAdjective2, 1, "adj")
@@ -58,6 +63,10 @@ function CodePoetry() {
     setWord(setNoun3, 2)
     setWord(setVerb1, 1, "v")
     setWord(setVerb2, 1, "v")
+    setConjunction(conjunctions[getRandomNumber(conjunctions.length)])
+    setPhrase(phrases[getRandomNumber(phrases.length)])
+
+
 
     const borderDetails = `${styles.borderColors[getRandomNumber(styles.borderColors.length)]} 3px dashed`;
     const style = { 
@@ -70,7 +79,7 @@ function CodePoetry() {
 
     const line1 = `a ${adjective1} ${noun1} of ${noun2}`;
     const line2 = `${verb1} and ${verb2} in the ${noun3}`;
-    const line3 = `and now it is ${adjective2}`;
+    const line3 = `${conjunction} ${phrase} ${adjective2}`;
 
     const poem = (<ul>
               <li>{line1}</li>
