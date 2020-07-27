@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { styles } from './Styles.js';
-import { getRandomNumber, getDate, getRandomLetter, shuffleArray, nounVerbAdj } from './Utils.js';
+import { getRandomNumber, getDate, getRandomLetter, shuffleArray, nounVerbAdj1, nounVerbAdj2 } from './Utils.js';
 
 const datamuse = require('datamuse');
 
@@ -43,7 +43,12 @@ function CodePoetry() {
             }
           }
         })
-        wordChoice = wordChoice ? wordChoice.word : nounVerbAdj[getRandomNumber(nounVerbAdj.length)]
+        wordChoice = wordChoice 
+        ? wordChoice.word 
+        : syllableCount == 1 
+          ? nounVerbAdj1[getRandomNumber(nounVerbAdj1.length)]
+          : nounVerbAdj2[getRandomNumber(nounVerbAdj2.length)]
+
         setThisState(wordChoice)
         console.log(wordChoice)
       });
