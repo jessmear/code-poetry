@@ -26,12 +26,6 @@ function CodePoetry() {
     build();
   }, []);
 
-  const pickWord = (data, syllableCount, partOfSpeech) => {
-    for(const word in data) {
-      console.log(word)
-    }
-  }
-
   const setWord = (setThisState, syllableCount = 1, partOfSpeech = "n") => {
     datamuse.request(`words?max=200&md=ps&sp=${getRandomLetter()}*`)
       .then((data) => {
@@ -50,17 +44,14 @@ function CodePoetry() {
           : nounVerbAdj2[getRandomNumber(nounVerbAdj2.length)]
 
         setThisState(wordChoice)
-        console.log(wordChoice)
       });
   }
 
-  
+  const conjunctions = ["for","and","nor","but","or","yet","so"]
+  const phrases = ["now it is", "then it was", "soon it be", "next it is", "then it is", "now we are", "then they were", "soon we were", "next they were", "then they are"]
 
   // BUILDING THE POEM
   const build = () => {
-    const conjunctions = ["for","and","nor","but","or","yet","so"]
-    const phrases = ["now it is", "then it was", "soon it be", "next it is", "then it is", "now we are", "then they were", "soon we were", "next they were", "then they are"]
-
     setWord(setAdjective1, 1, "adj")
     setWord(setAdjective2, 1, "adj")
     setWord(setNoun1, 1)
@@ -91,11 +82,12 @@ function CodePoetry() {
               <li>{line2}</li>
               <li>{line3}</li>
             </ul>);
-  
+    const tweet = `${line1} / ${line2} / ${line3}`
+    console.log(tweet)
     updatePoem({
       poem,
       style,
-      tweet: `${line1} / ${line2} / ${line3} [https://jessmear.github.io/code-poetry/]`,
+      tweet: `${tweet} [https://jessmear.github.io/code-poetry/]`,
       showInfo: 'modal-hide'
     })
   }
