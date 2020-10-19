@@ -99,7 +99,7 @@ function CodePoetry() {
           <span onClick={toggleModal} className="close">&times;</span>
           <p>Created by <a href="http://www.jessmear.com" target="_blank">Jess Mear</a>, copyright 2019 - {getDate()}.</p>
           <p>GitHub repo: <a href="https://github.com/jessmear/code-poetry" target="_blank">code-poetry</a></p>
-          <p>This project is using <a href="https://www.datamuse.com/api/" target="_blank">Datamuse API</a> and <a href="https://github.com/ansteh/datamuse" target="_blank">Datamuse NPM module</a>.</p>
+          {/* <p>This project is using <a href="https://www.datamuse.com/api/" target="_blank">Datamuse API</a> and <a href="https://github.com/ansteh/datamuse" target="_blank">Datamuse NPM module</a>.</p> */}
         </div>
       </div>
 
