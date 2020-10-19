@@ -42,17 +42,15 @@ export const words = {
     'oo': ['blue', 'new', 'few', 'two', 'true'],
     'ee': ['free', 'three', 'key', 'wee'],
     'ii': ['fly', 'high'],
-    // 'it': ['fit', 'lit'],
     'ay': ['grey', 'okay', 'fey'],
     'ust': ['rust', 'mussed', 'non-plussed'],
     'un': ['fun', 'one', 'done']
   },
 
   end_phrases: {
-    oo: ['are you'], 
+    oo: ['are you'],
     ee: ['is she', 'is he', 'are we'],
-    ii: ['am I'], 
-    // is: ['is it'], 
+    ii: ['am I'],
     ay: ['are they'],
     ust: ['we must'],
     un: ["it's done"]
