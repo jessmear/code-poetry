@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/code-poetry/static/css/main.62e5c31d.chunk.css",
-    "main.js": "/code-poetry/static/js/main.aba9271d.chunk.js",
-    "main.js.map": "/code-poetry/static/js/main.aba9271d.chunk.js.map",
+    "main.css": "/code-poetry/static/css/main.10ce6cd7.chunk.css",
+    "main.js": "/code-poetry/static/js/main.28d76a14.chunk.js",
+    "main.js.map": "/code-poetry/static/js/main.28d76a14.chunk.js.map",
     "runtime-main.js": "/code-poetry/static/js/runtime-main.5c859ef8.js",
     "runtime-main.js.map": "/code-poetry/static/js/runtime-main.5c859ef8.js.map",
-    "static/js/2.c49c1dcb.chunk.js": "/code-poetry/static/js/2.c49c1dcb.chunk.js",
-    "static/js/2.c49c1dcb.chunk.js.map": "/code-poetry/static/js/2.c49c1dcb.chunk.js.map",
+    "static/js/2.072886a6.chunk.js": "/code-poetry/static/js/2.072886a6.chunk.js",
+    "static/js/2.072886a6.chunk.js.map": "/code-poetry/static/js/2.072886a6.chunk.js.map",
     "index.html": "/code-poetry/index.html",
-    "precache-manifest.fdb0959241a92fe64d42462bf7498804.js": "/code-poetry/precache-manifest.fdb0959241a92fe64d42462bf7498804.js",
+    "precache-manifest.b8ff6400af69dfd42d12e0ae4ea17eb8.js": "/code-poetry/precache-manifest.b8ff6400af69dfd42d12e0ae4ea17eb8.js",
     "service-worker.js": "/code-poetry/service-worker.js",
-    "static/css/main.62e5c31d.chunk.css.map": "/code-poetry/static/css/main.62e5c31d.chunk.css.map"
+    "static/css/main.10ce6cd7.chunk.css.map": "/code-poetry/static/css/main.10ce6cd7.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.5c859ef8.js",
-    "static/js/2.c49c1dcb.chunk.js",
-    "static/css/main.62e5c31d.chunk.css",
-    "static/js/main.aba9271d.chunk.js"
+    "static/js/2.072886a6.chunk.js",
+    "static/css/main.10ce6cd7.chunk.css",
+    "static/js/main.28d76a14.chunk.js"
   ]
 }
