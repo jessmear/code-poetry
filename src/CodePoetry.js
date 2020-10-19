@@ -35,7 +35,7 @@ function CodePoetry() {
       'fontFamily': styles.fontFamilies[getRando(styles.fontFamilies.length)]
     };
 
-    const ryhmeChoices = ['oo', 'ee', 'ii', 'it', 'ay'];
+    const ryhmeChoices = ['oo', 'ee', 'ii', 'ay', 'ust', 'un'];
 
     const rhymeSound = ryhmeChoices[getRando(ryhmeChoices.length)];
 
@@ -51,6 +51,8 @@ function CodePoetry() {
     const line2 = `${plural_noun2} are ${adjective_rhyme}`;
     const line3 = `${noun} is ${adjective3}`;
     const line4 = `${cojunction} ${link} ${getPhrase()}`;
+
+    console.log(`${line1} / ${line2} / ${line3} / ${line4}`)
 
     const poem = (<ul>
               <li>-- {plural_noun1} --</li>
