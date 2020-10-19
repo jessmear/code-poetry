@@ -26,6 +26,7 @@ function CodePoetry() {
     const noun = words.nouns[getRando(words.nouns.length)];
     const adjective3 = words.adjectives[getRando(words.adjectives.length)];
     const cojunction = words.conjunctions[getRando(words.conjunctions.length)];
+    const link = words.links[getRando(words.links.length)];
 
     const borderDetails = `${styles.borderColors[getRando(styles.borderColors.length)]} 3px dashed`;
     const style = { 
@@ -49,7 +50,7 @@ function CodePoetry() {
     const line1 = `${plural_noun1} are ${adjective1}`;
     const line2 = `${plural_noun2} are ${adjective_rhyme}`;
     const line3 = `${noun} is ${adjective3}`;
-    const line4 = `${cojunction} so ${getPhrase()}`;
+    const line4 = `${cojunction} ${link} ${getPhrase()}`;
 
     const poem = (<ul>
               <li>-- {plural_noun1} --</li>
