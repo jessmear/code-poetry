@@ -28,9 +28,9 @@ const seed = datamuse.request(`words?md=p&sp=${alphabet[getRando(alphabet.length
 
 // WORD LISTS
 export const words = {
-  plural_nouns: ['roses', 'violets', 'airplanes', 'kittens', 'fishes', 'candies', 'programs', 'slingshots', 'lightbulbs', 'rivers', 'mermaids', 'rainbows', 'daisies', 'lap pools', 'cell phones', 'board games'],
+  plural_nouns: ['roses', 'violets', 'airplanes', 'kittens', 'fishes', 'candies', 'programs', 'slingshots', 'lightbulbs', 'rivers', 'mermaids', 'rainbows', 'daisies', 'lap pools', 'cell phones', 'board games', 'pizzas', 'Fridays', 'popsicles', 'rain clouds', 'thirteens', 'bunnies', 'Legos'],
 
-  nouns: ['sugar', 'the car', 'airplane', 'the cat', 'the fish', 'candy', 'the code', 'a sword', 'bright light', 'the squid', 'a whale', 'the cloud', 'flour', 'the pool', 'the phone', 'the game'],
+  nouns: ['sugar', 'the car', 'airplane', 'the cat', 'the fish', 'candy', 'the code', 'a sword', 'bright light', 'the squid', 'a whale', 'the cloud', 'flour', 'the pool', 'the phone', 'the game', 'flower'],
 
   conjunctions: ['and', 'but', 'yet'],
 
@@ -41,7 +41,7 @@ export const words = {
     'ee': ['free', 'three', 'key', 'wee'],
     'ii': ['fly', 'high'],
     'it': ['fit', 'lit'],
-    'ay': ['grey', 'okay', 'gay']
+    'ay': ['grey', 'okay', 'fey', ]
   },
 
   end_phrases: {
