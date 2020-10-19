@@ -34,14 +34,16 @@ export const words = {
 
   conjunctions: ['and', 'but', 'yet'],
 
-  adjectives: ['big', 'real', 'small', 'tall', 'long', 'drunk', 'ill', 'right', 'cross', 'mad', 'lax', 'mean', 'coy', 'prime', 'bored', 'fair', 'blonde', 'apt', 'low', 'high', 'wise', 'wry', 'huge', 'quick', 'clean', 'drab', 'plain', 'red', 'blue', 'green', 'black', 'dead', 'odd', 'rich', 'shy', 'sly', 'vast', 'brave', 'calm', 'kind', 'rough', 'rogue', 'wide', 'faint', 'loud', 'late', 'swift', 'light', 'weak', 'wet', 'full', 'cool', 'dark', 'dry', 'apt', 'few', 'sweet'],
+  adjectives: ['big', 'real', 'small', 'tall', 'long', 'drunk', 'ill', 'right', 'cross', 'mad', 'lax', 'mean', 'coy', 'prime', 'bored', 'fair', 'blonde', 'apt', 'low', 'high', 'wise', 'wry', 'huge', 'quick', 'clean', 'drab', 'plain', 'red', 'blue', 'green', 'black', 'dead', 'odd', 'rich', 'shy', 'sly', 'vast', 'brave', 'calm', 'kind', 'rough', 'rogue', 'wide', 'faint', 'loud', 'late', 'swift', 'light', 'weak', 'wet', 'full', 'cool', 'dark', 'dry', 'apt', 'few', 'sweet', 'good', 'wrong'],
 
   rhyming_adjectives: {
     'oo': ['blue', 'new', 'few', 'two', 'true'],
     'ee': ['free', 'three', 'key', 'wee'],
     'ii': ['fly', 'high'],
     'it': ['fit', 'lit'],
-    'ay': ['grey', 'okay', 'fey', ]
+    'ay': ['grey', 'okay', 'fey'],
+    'ust': ['rust', 'mussed', 'non-plussed'],
+    'un': ['fun', 'one', 'done']
   },
 
   end_phrases: {
@@ -49,6 +51,8 @@ export const words = {
     ee: ['is she', 'is he', 'are we'],
     ii: ['am I'], 
     it: ['is it'], 
-    ay: ['are they']
+    ay: ['are they'],
+    ust: ['we must'],
+    un: ["it's done"]
   }
 }
