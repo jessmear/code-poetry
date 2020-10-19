@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { words } from './Words.js';
 import { styles } from './Styles.js';
-import { getRandomNumber, getDate, getRandomLetter, shuffleArray, nounVerbAdj1, nounVerbAdj2 } from './Utils.js';
-
-const datamuse = require('datamuse');
+import { getRando } from './Utils.js';
 
 function CodePoetry() {
   const intialState = {
@@ -12,82 +11,58 @@ function CodePoetry() {
     showInfo: 'modal-hide'
   };
   const [poem, updatePoem] = useState(intialState);
-  const [adjective1, setAdjective1] = useState('short');
-  const [adjective2, setAdjective2] = useState('still');
-  const [noun1, setNoun1] = useState('blade');
-  const [noun2, setNoun2] = useState('grass');
-  const [noun3, setNoun3] = useState('breezes');
-  const [verb1, setVerb1] = useState('bends');
-  const [verb2, setVerb2] = useState('sways');
-  const [conjunction, setConjunction] = useState('and');
-  const [phrase, setPhrase] = useState('now it is');
 
   useEffect(() => {
     build();
   }, []);
 
-  const setWord = (setThisState, syllableCount = 1, partOfSpeech = "n") => {
-    datamuse.request(`words?max=200&md=ps&sp=${getRandomLetter()}*`)
-      .then((data) => {
-        shuffleArray(data)
-        let wordChoice = data.find(word => {
-          if(word.numSyllables == syllableCount) {
-            if(word.tags && word.tags[0] == partOfSpeech) {
-              return true
-            }
-          }
-        })
-        wordChoice = wordChoice 
-        ? wordChoice.word 
-        : syllableCount == 1 
-          ? nounVerbAdj1[getRandomNumber(nounVerbAdj1.length)]
-          : nounVerbAdj2[getRandomNumber(nounVerbAdj2.length)]
-
-        setThisState(wordChoice)
-      });
-  }
-
-  const conjunctions = ["for","and","nor","but","or","yet","so"]
-  const phrases = ["now it is", "then it was", "soon it be", "next it is", "then it is", "now we are", "then they were", "soon we were", "next they were", "then they are"]
+  
 
   // BUILDING THE POEM
   const build = () => {
-    setWord(setAdjective1, 1, "adj")
-    setWord(setAdjective2, 1, "adj")
-    setWord(setNoun1, 1)
-    setWord(setNoun2, 1)
-    setWord(setNoun3, 2)
-    setWord(setVerb1, 1, "v")
-    setWord(setVerb2, 1, "v")
-    setConjunction(conjunctions[getRandomNumber(conjunctions.length)])
-    setPhrase(phrases[getRandomNumber(phrases.length)])
+    const plural_noun1 = words.plural_nouns[getRando(words.plural_nouns.length)];
+    const adjective1 = words.adjectives[getRando(words.adjectives.length)];
+    const plural_noun2 = words.plural_nouns[getRando(words.plural_nouns.length)];
+    const noun = words.nouns[getRando(words.nouns.length)];
+    const adjective3 = words.adjectives[getRando(words.adjectives.length)];
+    const cojunction = words.conjunctions[getRando(words.conjunctions.length)];
 
-
-
-    const borderDetails = `${styles.borderColors[getRandomNumber(styles.borderColors.length)]} 3px dashed`;
+    const borderDetails = `${styles.borderColors[getRando(styles.borderColors.length)]} 3px dashed`;
     const style = { 
-      'color': styles.textColors[getRandomNumber(styles.textColors.length)],
+      'color': styles.textColors[getRando(styles.textColors.length)],
       'border': borderDetails,
-      'fontFamily': styles.fontFamilies[getRandomNumber(styles.fontFamilies.length)]
+      'fontFamily': styles.fontFamilies[getRando(styles.fontFamilies.length)]
     };
 
+    const ryhmeChoices = ['oo', 'ee', 'ii', 'it', 'ay'];
 
+    const rhymeSound = ryhmeChoices[getRando(ryhmeChoices.length)];
 
-    const line1 = `a ${adjective1} ${noun1} of ${noun2}`;
-    const line2 = `${verb1} and ${verb2} in the ${noun3}`;
-    const line3 = `${conjunction} ${phrase} ${adjective2}`;
+    const adjective_rhyme = words.rhyming_adjectives[rhymeSound][getRando(words.rhyming_adjectives[rhymeSound].length)];
+
+    function getPhrase() {
+      const num = getRando(words.end_phrases[rhymeSound].length);
+      const phraseChoice = words.end_phrases[rhymeSound][num];
+      return phraseChoice;
+    }
+
+    const line1 = `${plural_noun1} are ${adjective1}`;
+    const line2 = `${plural_noun2} are ${adjective_rhyme}`;
+    const line3 = `${noun} is ${adjective3}`;
+    const line4 = `${cojunction} so ${getPhrase()}`;
 
     const poem = (<ul>
+              <li>-- {plural_noun1} --</li>
               <li>{line1}</li>
               <li>{line2}</li>
               <li>{line3}</li>
+              <li>{line4}</li>
             </ul>);
-    const tweet = `${line1} / ${line2} / ${line3}`
-    console.log(tweet)
+  
     updatePoem({
       poem,
       style,
-      tweet: `${tweet} [https://jessmear.github.io/code-poetry/]`,
+      tweet: `${line1} / ${line2} / ${line3} / ${line4} [https://jessmear.github.io/code-poetry/]`,
       showInfo: 'modal-hide'
     })
   }
@@ -98,6 +73,10 @@ function CodePoetry() {
       ...poem,
       showInfo
     })
+  }
+
+  const getDate = () => {
+    return new Date().getYear()-100+2000;
   }
 
   return (

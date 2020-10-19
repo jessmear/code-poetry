@@ -6,6 +6,14 @@ cojunction so ' are you / is she / is he / are we / am I / is it / are they '
 */
 
 
+
+
+
+
+
+
+
+
 const plural_nouns = ['roses', 'violets', 'airplanes', 'kittens', 'fishes', 'candies', 'programs', 'slingshots', 'lightbulbs', 'rivers', 'mermaids', 'rainbows', 'daisies', 'lap pools', 'cell phones', 'board games'];
 const nouns = ['sugar', 'the car', 'airplane', 'the cat', 'the fish', 'candy', 'the code', 'a sword', 'bright light', 'the squid', 'a whale', 'the cloud', 'flour', 'the pool', 'the phone', 'the game'];
 const conjunctions = ['and', 'but', 'or', 'so,', 'yet'];

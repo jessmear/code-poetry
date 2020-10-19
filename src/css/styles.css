@@ -28,7 +28,7 @@ body {
   list-style-type: none;
 }
 .poem ul li:first-child {
-  padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 .nav {
