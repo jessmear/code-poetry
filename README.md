@@ -1,5 +1,10 @@
 This is the bare-bones skeleton of a generative poetry app.
 
+Helpful Links:
+http://www.rhymezone.com/r/rhyme.cgi?Word=fun&typeofrhyme=adv&org1=syl&org2=l&org3=y
+http://www.yougowords.com/speech/adverb/1-syllables
+
+
 Goals:
 - improve page design
 - hit APIs to obtain better word lists
